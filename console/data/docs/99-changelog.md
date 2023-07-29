@@ -13,13 +13,19 @@ identified with a specific icon:
 
 ## Unreleased
 
+- 💥 *cmd*: use `AKVORADO_CFG_` as a prefix for environment variables used to
+  modify configuration (`AKVORADO_CFG_ORCHESTRATOR_HTTP_LISTEN` instead of
+  `AKVORADO_ORCHESTRATOR_HTTP_LISTEN`)
 - 💥 *inlet*: `inlet`→`metadata`→`provider(snmp)`→`ports` is now a map from
   exporter subnets to ports, instead of a map from agent subnets to ports. This
   is aligned with how `communities` and `security-parameters` options behave.
 - ✨ *inlet*: metadata retrieval is now pluggable. In addition to SNMP, it is
   now possible to set exporter names, interface names and descriptions directly
   in the configuration file. See `inlet`→`metadata`.
-- ✨ *inlet*: allow extraction of prefix length from BMP. See `inlet`→`core`→`net-providers`.
+- ✨ *inlet*: routing information is now pluggable. Currently, only BMP is
+  supported. See `inlet`→`routing`.
+- ✨ *inlet*: allow extraction of prefix length from routing information. See
+  `inlet`→`core`→`net-providers`.
 - ✨ *inlet*: add the following collected data (disabled by default):
   - `IPTTL`
   - `IPTos`
